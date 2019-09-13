@@ -2,3 +2,4 @@ venv/
 .idea
 *.swp
 *.tmp
+*gz
