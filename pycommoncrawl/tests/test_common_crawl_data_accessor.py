@@ -35,6 +35,13 @@ class TestCommonCrawlDataAccessor(unittest.TestCase):
         self.common_crawl_data_accessor = CommonCrawlDataAccessorTest("https://commoncrawl.s3.amazonaws.com/crawl-data/"
                                                                       "CC-MAIN-2019-35/index.html", False)
 
+    def test_latest(self):
+        common_crawl_data_accessor = CommonCrawlDataAccessorTest("latest", False)
+        counter = 0
+        for _ in common_crawl_data_accessor.get_raw_resource_data_per_block("WET"):
+            counter += 1
+        self.assertEqual(3, counter)
+
     def test_part_names(self):
         self.assertIn("Segments", self.common_crawl_data_accessor.get_part_names())
         self.assertIn("URL index files", self.common_crawl_data_accessor.get_part_names())

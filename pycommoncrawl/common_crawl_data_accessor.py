@@ -6,6 +6,7 @@ import urllib.request
 import progressbar
 
 from pycommoncrawl.utils import get_raw_html_page, BASE
+from pycommoncrawl.version_getter import VersionGetter
 from pycommoncrawl.warc_string_record import WARCStringRecord
 
 
@@ -22,7 +23,10 @@ def get_destination(url):
 
 class CommonCrawlDataAccessor(object):
 
-    def __init__(self, url, clean_after=True):
+    def __init__(self, url="latest", clean_after=True):
+        if url == "latest":
+            version_getter = VersionGetter()
+            _, url = version_getter.get_latest_version()
         self.url = url
         self.clean_after = clean_after
         self.base = "/".join(url.split("/")[:-1])
