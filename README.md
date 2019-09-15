@@ -9,7 +9,7 @@ TODO
 ## USAGE
 
 ```python
-from common_crawl_data_accessor import CommonCrawlDataAccessor
+from pycommoncrawl.common_crawl_data_accessor import CommonCrawlDataAccessor
 
 common_crawl_data_accessor = CommonCrawlDataAccessor()
 

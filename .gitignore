@@ -3,3 +3,6 @@ venv/
 *.swp
 *.tmp
 *gz
+build/
+dist/
+pycommoncrawl.egg-info/
