@@ -34,11 +34,6 @@ def save_cached_version(url, content):
         return f.write(content)
 
 
-def download(url, destination):
-    if not os.path.exists(destination):
-        urllib.request.urlretrieve(url, destination)
-
-
 def get_encoded_filename(filename):
     return hashlib.sha512(filename.encode("utf-8")).hexdigest() + ".tmp"
 

@@ -1,2 +1,2 @@
+progressbar
 pytest
-progressbar2
