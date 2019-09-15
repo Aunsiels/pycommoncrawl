@@ -1,6 +1,6 @@
 import unittest
 
-from pycommoncrawl.warc_string import WARCStringRecord
+from pycommoncrawl.warc_string_record import WARCStringRecord
 
 test_string = """
 WARC/1.0

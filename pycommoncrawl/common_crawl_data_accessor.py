@@ -6,6 +6,7 @@ import urllib.request
 import progressbar
 
 from pycommoncrawl.utils import get_raw_html_page, BASE
+from pycommoncrawl.warc_string_record import WARCStringRecord
 
 
 class UnknownResourceName(Exception):
@@ -93,3 +94,7 @@ class CommonCrawlDataAccessor(object):
             buffer.append(line)
         if buffer:
             yield "\n".join(buffer)
+
+    def get_raw_resource_data_per_warc(self, resource_name, min_file_number=0, max_file_number=-1):
+        for bloc in self.get_raw_resource_data_per_block(resource_name, min_file_number, max_file_number):
+            yield WARCStringRecord(bloc)
