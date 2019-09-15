@@ -4,7 +4,7 @@ A python interface for [Common Crawl](https://commoncrawl.org/).
 
 ## INSTALL
 
-TODO
+pip3 install pycommoncrawl
 
 ## USAGE
 
