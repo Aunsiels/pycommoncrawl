@@ -1,2 +1,3 @@
 progressbar
 pytest
+warc3-wet
